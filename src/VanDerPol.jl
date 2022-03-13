@@ -8,8 +8,8 @@ function VDP_step(x,u,dt)
     k1 = x_dot(x,u)
     k2 = x_dot(x + k1*deltaT/2,u)
     k3 = x_dot(x + k2*deltaT/2,u)
-    k4 = x_dot(x + k1*deltaT,u)
-    x_next =  x + (deltaT/6) * (k1 + 3*k2 + 2*k3 + k4)
+    k4 = x_dot(x + k3*deltaT,u)
+    x_next =  x + (deltaT/6) * (k1 + 2*k2 + 2*k3 + k4)
     return x_next
 end
 
