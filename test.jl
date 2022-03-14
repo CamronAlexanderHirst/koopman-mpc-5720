@@ -8,7 +8,6 @@ global dt = 0.01
 Tmax = 3
 Nsim = Integer(Tmax/dt)
 
-
 # Allocate arrays for data storage
 global X_hist = zeros(Nsim+1, 2)
 X_hist[1,:] = x
@@ -21,7 +20,6 @@ for i = 1:Nsim
     X_hist[i+1,:] = VanDerPol.VDP_step(X_hist[i,:], u_dt(i), dt)
     U_hist[i] = u_dt(i)
 end
-
 
 plot(1:Nsim+1, X_hist[:,1], label="x1")
 plot!(1:Nsim+1, X_hist[:,2], label="x2")

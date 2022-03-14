@@ -1,6 +1,5 @@
 module VanDerPol
 
-# Check this
 x_dot(x,u) = [2*x[2], (-0.8)*x[1] + 2*x[2] - 10*x[2]*(x[1]^2) + u]
 
 function VDP_step(x,u,dt)
