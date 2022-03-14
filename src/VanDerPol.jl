@@ -12,4 +12,11 @@ function VDP_step(x,u,dt)
     return x_next
 end
 
+function VDP_cts(x, p, t)
+    dx = similar(x)
+    dx[1] = 2 * x[2]
+    dx[2] = (-0.8) * x[1] + 2 * x[2] - 10 * x[2] * (x[1]^2) + u
+    return dx
+end
+
 end  # module
